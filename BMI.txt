@@ -1,0 +1,41 @@
+import tkinter
+window = tkinter.Tk()
+window.title("BMI Calculater")
+window.minsize(width=300, height=400)
+
+my_label = tkinter.Label(text="enter your weight(kg)")
+my_label.config(pady=10)
+my_label.pack()
+
+def calculate_bmi():
+    weight=my_entry.get()
+    height=my_entry2.get()
+    bmi=float(weight)/(float(height)**2)*100
+    if bmi<18.5 :
+        print("underweight!")
+    elif  18.5<= bmi <=24.9:
+        print("normal")
+    elif 25<= bmi <=29.9:
+        print("overweight")
+    elif 30<= bmi <= 34.9 :
+         print("obese")
+    else:
+        print("extremely obese")
+
+
+my_button = tkinter.Button(text="Calculate",font=10, command=calculate_bmi)
+my_button.place(x=95 ,y=135)
+
+
+my_entry = tkinter.Entry(width=25)
+my_entry.pack()
+
+
+my_label2 = tkinter.Label(text="enter your height(cm)")
+my_label2.config(pady=10)
+my_label2.pack()
+
+my_entry2 = tkinter.Entry(width=25)
+my_entry2.pack()
+
+window.mainloop()
